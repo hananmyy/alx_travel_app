@@ -19,6 +19,7 @@ from django.urls import path, re_path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from listings.views import home_view
 
 # Swagger Configuration
 schema_view = get_schema_view(
@@ -35,4 +36,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),  # Admin Panel
     path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="swagger-ui"),  # API Docs
     path("listings/", include("listings.urls")),  # App Routes
+     path("", home_view, name="home"),  # Global homepage route
 ]

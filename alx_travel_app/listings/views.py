@@ -3,5 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def sample_view(request):
-    return HttpResponse("Listings App is working!")
+def home_view(request):
+    return HttpResponse("Welcome to the ALX Travel App!")
